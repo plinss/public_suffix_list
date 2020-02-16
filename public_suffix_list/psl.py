@@ -77,6 +77,7 @@ class PublicSuffixList:
         self._suffixes = {}
         self._exceptions = {}
         self._load_cache()
+        self._refresh_cache()
 
     def _file_time(self, file_path: str) -> Optional[datetime.datetime]:
         if (os.path.isfile(file_path)):
