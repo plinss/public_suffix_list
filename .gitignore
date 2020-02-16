@@ -1,7 +1,7 @@
 *.dat
 
 # Editor files
-*.sublime-*
+*.sublime-workspace
 .vscode/
 .idea/
 
