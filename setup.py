@@ -19,6 +19,7 @@ setuptools.setup(
     package_data={'public_suffix_list': ['py.typed']},
 
     install_requires=[
+        'idna',
         'typing_extensions',
     ],
     extras_require={

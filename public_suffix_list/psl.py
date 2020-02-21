@@ -12,6 +12,8 @@ import urllib.error
 import urllib.request
 from typing import Any, Dict, Optional, Tuple
 
+import idna
+
 from typing_extensions import Protocol
 
 
@@ -173,7 +175,7 @@ class PublicSuffixList:
                     entry = line.split()[:1][0]
                     for char in entry:
                         if (127 < ord(char)):   # add punycode equivalent
-                            self._add_entry(entry.encode('idna').decode('ascii'))
+                            self._add_entry(idna.encode(entry).decode('ascii'))
                             break
                     self._add_entry(entry)
 
